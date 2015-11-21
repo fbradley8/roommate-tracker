@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>roommate-tracker2</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/core.css">
+        <style>
+		body {
+			text-align: center;
+			background-image: url('/img/wallpaper.jpg');
+			background-size: cover;
+		}
+
+		* {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		.container {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			border: 15px solid transparent;
+		}
+
+		.half {
+			width: 50%;
+			height: 100%;
+			position: relative;
+			float: left;
+			border: 15px solid transparent;
+		}
+
+		.half p {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			font-family: "Arial";
+			font-size: 36px;
+			color: #fff;
+		}
+
+
+		.thumb-container {
+			width: 250px;
+			height: 250px;
+			overflow: hidden;
+			overflow-x: hidden;
+			overflow-y: hidden;
+			margin: auto;
+			position: absolute;
+			border: 5px solid rgba(0,0,0,0.75);
+			border-radius: 100%;
+			box-shadow: 0 0 5px rgba(0,0,0,0.75);
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			background-size: cover;
+			background-position: center;
+			-webkit-filter: grayscale(100%);
+		}
+
+
+		.thumb {
+			width: 250px;
+			position: absolute;
+			left: -1000%;
+			right: -1000%;
+			top: -1000%;
+			bottom: -1000%;
+			margin: auto;
+			min-height: 100%;
+			min-width: 100%;
+			-webkit-transform:scale(1);
+		}
+
+		.home {
+			background-image: url('/img/home.png');
+			background-size: 50px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-position-y: 14px;
+			background-color: #00C13E;
+			width: 85px;
+			height: 85px;
+			overflow: hidden;
+			margin: auto;
+			position: absolute;
+			/*border: 2px solid rgba(0,0,0,0.75);*/
+			border-radius: 100%;
+			box-shadow: 0 0 0 2px rgba(0,0,0,0.25);
+			top: 165px;
+			bottom: 0;
+			right: 0;
+			left: 165px;
+			display: none;
+		}
+
+		.active .home {
+			display: block;
+		}
+
+		.active .thumb-container {
+			-webkit-filter: grayscale(0);
+		}
+
+		p {
+			margin:0;
+			padding:0;
+		}
+
+	</style>
+    </head>
+    <body>
+
+
+	<div class="container">
+		<div id="forrest" class="half">
+			<div class="thumb-container" style="background-image: url('/img/forrest.jpg');">
+				<!-- <img class="thumb" src="/img/forrest.jpg"> -->
+			</div>
+			<div class="home"></div>
+			<p>Forrest</p>
+		</div>
+
+		<div id="jake" class="half">
+			<div class="thumb-container" style="background-image: url('/img/jake.jpg');">
+				<!-- <img class="thumb" src="/img/jake.jpg"> -->
+			</div>
+			<div class="home"></div>
+			<p>Jake</p>
+		</div>
+	</div>
+
+    
+    <!-- jQuery --> 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="public/bower_components/jQuery/jquery.min.js"><\/script>')</script>
+
+    <!-- socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+
+	<!-- APP CODE -->
+	<script src="js/app.min.js"></script>
+    </body>
+</html>

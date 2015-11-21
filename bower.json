@@ -1,0 +1,7 @@
+{
+  "name": "roommate-tracker2",
+  "version": "0.0.0",
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
